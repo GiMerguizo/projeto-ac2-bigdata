@@ -1,5 +1,8 @@
 # Projeto AC2 BigData
 
+**Tema:** Acidentes no Espaço Aéreo Brasileiro (Cenipa) <br>
+**Link do dataset:** https://www.kaggle.com/datasets/markfinn1/acidentes-areos?select=Cenipa.csv
+
 ## Introdução
 
 O Apache Spark é um framework de processamento de dados em larga escala, projetado para ser rápido e eficiente. Ele oferece suporte a diversas linguagens de programação, sendo PySpark a interface para Python.
@@ -9,14 +12,20 @@ Nesta aula, abordaremos alguns conceitos essenciais do Spark, incluindo DataFram
 ## Preparação do Ambiente
 
 ### 1. Docker com Spark
-
+#### Na primeira vez:
 ```bash
    docker run --name spark-container -p 8888:8888 -p 4040:4040 -p 7077:7077 -v $(pwd):/home/jovyan/work jupyter/pyspark-notebook -d
 ```
 
-![alt text](image-1.png)
+![acesso_docker](./assets/images/image-1.png)
 
 No navegador, ao acessar o link que aparecerá no seu terminal.
+
+#### Nas outras vezes:
+```bash
+docker start spark-container
+docker logs spark-container # para pegar o link de acesso
+```
 
 ## PySpark e SparkSession
 
